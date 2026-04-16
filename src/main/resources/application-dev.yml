@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: concert-ticket-reservation
+  datasource:
+    url: jdbc:postgresql://localhost:5432/edts_tickets
+    username: edts
+    password: edts
