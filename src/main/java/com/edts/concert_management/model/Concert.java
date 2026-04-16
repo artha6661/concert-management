@@ -49,6 +49,22 @@ public class Concert {
   @Column(nullable = false)
   private long version;
 
-  
+  public static Concert create(
+      String name,
+      String venue,
+      Instant startsAt,
+      Instant bookingOpensAt,
+      Instant bookingClosesAt,
+      int totalTickets) {
+    Concert c = new Concert();
+    c.name = name;
+    c.venue = venue;
+    c.startsAt = startsAt;
+    c.bookingOpensAt = bookingOpensAt;
+    c.bookingClosesAt = bookingClosesAt;
+    c.totalTickets = totalTickets;
+    c.remainingTickets = totalTickets;
+    return c;
+  }
 
 }
