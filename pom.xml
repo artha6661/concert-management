@@ -11,8 +11,8 @@
 	<groupId>com.edts</groupId>
 	<artifactId>concert-ticket-reservation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>Concert Ticket Reservation</name>
+	<description>Technical assessment: concert ticket reservation APIs</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -76,6 +76,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+            <version>1.20.4</version>
+        </dependency>
 	</dependencies>
 
 	<build>

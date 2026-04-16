@@ -1,4 +1,4 @@
-package com.edts.concert_ticket_reservation;
+package com.edts.concert_management;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
