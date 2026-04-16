@@ -5,3 +5,21 @@ spring:
     url: jdbc:postgresql://localhost:5432/edts_tickets
     username: edts
     password: edts
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    enabled: false
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+ 
+logging:
+  level:
+    org.hibernate.SQL: INFO
