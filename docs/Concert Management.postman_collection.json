@@ -1,0 +1,540 @@
+{
+  "info": {
+    "_postman_id": "8004f1f5-898f-4bdf-8da2-afcde15d78a0",
+    "name": "Concert Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37542345"
+  },
+  "item": [
+    {
+      "name": "Concert Get - All Concert",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/concerts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "concerts"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://localhost:8080/api/concerts\""
+      },
+      "response": [
+        {
+          "name": "Get - All Concert",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/concerts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "concerts"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 16 Apr 2026 16:26:40 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Tiny Venue Showcase\",\n        \"venue\": \"Studio A\",\n        \"startsAt\": \"2026-04-18T20:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T10:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T10:20:00Z\",\n        \"totalTickets\": 10,\n        \"remainingTickets\": 10\n    },\n    {\n        \"id\": 1,\n        \"name\": \"EDTS Live at Central Hall\",\n        \"venue\": \"Central Hall\",\n        \"startsAt\": \"2026-04-20T19:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T10:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T10:20:00Z\",\n        \"totalTickets\": 10000,\n        \"remainingTickets\": 10000\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Test\",\n        \"venue\": \"Hall\",\n        \"startsAt\": \"2026-05-01T19:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T14:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T16:00:00Z\",\n        \"totalTickets\": 10,\n        \"remainingTickets\": 10\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Test Concert\",\n        \"venue\": \"Main Hall\",\n        \"startsAt\": \"2026-05-01T19:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T14:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T23:00:00Z\",\n        \"totalTickets\": 10,\n        \"remainingTickets\": 8\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Concert Get - By Keyword",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/concerts?q=rock",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "concerts"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "rock"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://localhost:8080/api/concerts?q=rock\""
+      },
+      "response": [
+        {
+          "name": "Get - By Keyword",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/concerts?q=Test",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "concerts"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "Test"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 16 Apr 2026 16:27:24 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Test\",\n        \"venue\": \"Hall\",\n        \"startsAt\": \"2026-05-01T19:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T14:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T16:00:00Z\",\n        \"totalTickets\": 10,\n        \"remainingTickets\": 10\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Test Concert\",\n        \"venue\": \"Main Hall\",\n        \"startsAt\": \"2026-05-01T19:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T14:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T23:00:00Z\",\n        \"totalTickets\": 10,\n        \"remainingTickets\": 8\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Concert Get - By Range Date",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/concerts?startsFrom=2026-04-01T00:00:00Z&startsTo=2026-04-30T23:59:59Z",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "concerts"
+          ],
+          "query": [
+            {
+              "key": "startsFrom",
+              "value": "2026-04-01T00:00:00Z"
+            },
+            {
+              "key": "startsTo",
+              "value": "2026-04-30T23:59:59Z"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://localhost:8080/api/concerts?startsFrom=2026-04-01T00:00:00Z&startsTo=2026-04-30T23:59:59Z\""
+      },
+      "response": [
+        {
+          "name": "Concert Get - By Range Date",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/concerts?startsFrom=2026-04-01T00:00:00Z&startsTo=2026-04-30T23:59:59Z",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "concerts"
+              ],
+              "query": [
+                {
+                  "key": "startsFrom",
+                  "value": "2026-04-01T00:00:00Z"
+                },
+                {
+                  "key": "startsTo",
+                  "value": "2026-04-30T23:59:59Z"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 16 Apr 2026 16:28:48 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Tiny Venue Showcase\",\n        \"venue\": \"Studio A\",\n        \"startsAt\": \"2026-04-18T20:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T10:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T10:20:00Z\",\n        \"totalTickets\": 10,\n        \"remainingTickets\": 10\n    },\n    {\n        \"id\": 1,\n        \"name\": \"EDTS Live at Central Hall\",\n        \"venue\": \"Central Hall\",\n        \"startsAt\": \"2026-04-20T19:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T10:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T10:20:00Z\",\n        \"totalTickets\": 10000,\n        \"remainingTickets\": 10000\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Concert - Get by Keyword & Range Date",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/concerts?q=festival&startsFrom=2026-04-01T00:00:00Z&startsTo=2026-04-30T23:59:59Z",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "concerts"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "festival"
+            },
+            {
+              "key": "startsFrom",
+              "value": "2026-04-01T00:00:00Z"
+            },
+            {
+              "key": "startsTo",
+              "value": "2026-04-30T23:59:59Z"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://localhost:8080/api/concerts?q=festival&startsFrom=2026-04-01T00:00:00Z&startsTo=2026-04-30T23:59:59Z\""
+      },
+      "response": [
+        {
+          "name": "Concert - Get by Keyword & Range Date",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/concerts?q=EDTS&startsFrom=2026-04-01T00:00:00Z&startsTo=2026-04-30T23:59:59Z",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "concerts"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "EDTS"
+                },
+                {
+                  "key": "startsFrom",
+                  "value": "2026-04-01T00:00:00Z"
+                },
+                {
+                  "key": "startsTo",
+                  "value": "2026-04-30T23:59:59Z"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 16 Apr 2026 16:30:54 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"EDTS Live at Central Hall\",\n        \"venue\": \"Central Hall\",\n        \"startsAt\": \"2026-04-20T19:00:00Z\",\n        \"bookingOpensAt\": \"2026-04-15T10:00:00Z\",\n        \"bookingClosesAt\": \"2026-04-15T10:20:00Z\",\n        \"totalTickets\": 10000,\n        \"remainingTickets\": 10000\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Consert Add - Admin Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Coldplay Live 2026\",\r\n    \"venue\": \"Jakarta International Stadium\",\r\n    \"startsAt\": \"2026-05-01T19:00:00Z\",\r\n    \"bookingOpensAt\": \"2026-04-20T10:00:00Z\",\r\n    \"bookingClosesAt\": \"2026-04-30T23:59:59Z\",\r\n    \"totalTickets\": 50000\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/admin/concerts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "admin",
+            "concerts"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/admin/concerts\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"name\": \"Coldplay Live 2026\",\r\n    \"venue\": \"Jakarta International Stadium\",\r\n    \"startsAt\": \"2026-05-01T19:00:00Z\",\r\n    \"bookingOpensAt\": \"2026-04-20T10:00:00Z\",\r\n    \"bookingClosesAt\": \"2026-04-30T23:59:59Z\",\r\n    \"totalTickets\": 50000\r\n  }'"
+      },
+      "response": [
+        {
+          "name": "Consert Add - Admin Create",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Coldplay Live 2026\",\r\n    \"venue\": \"Jakarta International Stadium\",\r\n    \"startsAt\": \"2026-05-01T19:00:00Z\",\r\n    \"bookingOpensAt\": \"2026-04-20T10:00:00Z\",\r\n    \"bookingClosesAt\": \"2026-04-30T23:59:59Z\",\r\n    \"totalTickets\": 50000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/admin/concerts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "admin",
+                "concerts"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 16 Apr 2026 17:04:50 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 5,\n    \"name\": \"Coldplay Live 2026\",\n    \"venue\": \"Jakarta International Stadium\",\n    \"startsAt\": \"2026-05-01T19:00:00Z\",\n    \"bookingOpensAt\": \"2026-04-20T10:00:00Z\",\n    \"bookingClosesAt\": \"2026-04-30T23:59:59Z\",\n    \"totalTickets\": 50000,\n    \"remainingTickets\": 50000\n}"
+        }
+      ]
+    },
+    {
+      "name": "Bookings - Concert",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"user123\",\r\n    \"quantity\": 2\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/concerts/1/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "concerts",
+            "1",
+            "bookings"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/concerts/1/bookings\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"userId\": \"user123\",\r\n    \"quantity\": 2\r\n  }'"
+      },
+      "response": [
+        {
+          "name": "Bookings - Concert",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\": \"user123\",\r\n    \"quantity\": 2\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/concerts/1/bookings",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "concerts",
+                "1",
+                "bookings"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 17 Apr 2026 11:42:49 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 7,\n    \"concertId\": 1,\n    \"userId\": \"user123\",\n    \"quantity\": 2,\n    \"status\": \"CONFIRMED\",\n    \"createdAt\": \"2026-04-17T11:42:49.580542500Z\"\n}"
+        }
+      ]
+    }
+  ]
+}

@@ -12,7 +12,7 @@ public class BeforeWindowClockTestConfig {
   @Bean
   @Primary
   public Clock fixedClock() {
-    return Clock.fixed(Instant.parse("2026-04-15T09:00:00Z"), ZoneOffset.UTC);
+    return Clock.fixed(Instant.parse("2026-04-17T18:00:00Z"), ZoneOffset.UTC);
   }
 }
 
