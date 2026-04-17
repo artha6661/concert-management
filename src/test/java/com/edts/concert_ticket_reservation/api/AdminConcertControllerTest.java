@@ -24,8 +24,8 @@ class AdminConcertControllerTest {
             + "\"name\":\"Admin Created\","
             + "\"venue\":\"Hall\","
             + "\"startsAt\":\"2026-05-01T19:00:00Z\","
-            + "\"bookingOpensAt\":\"2026-04-15T10:00:00Z\","
-            + "\"bookingClosesAt\":\"2026-04-15T10:20:00Z\","
+            + "\"bookingOpensAt\":\"2026-04-17T11:00:00Z\","
+            + "\"bookingClosesAt\":\"2026-04-17T16:20:00Z\","
             + "\"totalTickets\":123"
             + "}";
 
