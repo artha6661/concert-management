@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 
+import com.edts.concert_management.ConcertTicketReservationApplication;
 import com.edts.concert_management.enums.BookingStatus;
 import com.edts.concert_management.model.Booking;
 import com.edts.concert_management.repository.ConcertRepository;
@@ -20,7 +21,7 @@ import com.edts.concert_ticket_reservation.testsupport.FixedClockTestConfig;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(classes = ConcertTicketReservationApplication.class)
 @Import(FixedClockTestConfig.class)
 class BookingConcurrencyTest {
   @Autowired BookingService bookingService;
