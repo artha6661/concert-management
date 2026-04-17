@@ -12,6 +12,8 @@ import com.edts.concert_management.dto.BookingResponse;
 import com.edts.concert_management.dto.CreateBookingRequest;
 import com.edts.concert_management.model.Booking;
 import com.edts.concert_management.service.BookingService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -24,6 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BookingController {
   private final BookingService bookingService;
+  private final ObjectMapper objectMapper = new ObjectMapper();
 
   public BookingController(BookingService bookingService) {
     this.bookingService = bookingService;
@@ -32,11 +35,22 @@ public class BookingController {
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   @Operation(summary = "Book tickets for a concert (concurrency-safe)")
-  public BookingResponse create(@PathVariable("concertId") Long concertId, @Valid @RequestBody CreateBookingRequest req) {
-    log.info("Request: {}", req);
-    Booking booking = bookingService.book(concertId, req.getUserId(), req.getQuantity());
-    log.info("Response: {}", BookingResponse.from(booking));
-    return BookingResponse.from(booking);
+  public BookingResponse create(
+          @PathVariable("concertId") Long concertId,
+          @Valid @RequestBody CreateBookingRequest req) throws JsonProcessingException {
+
+      log.info("Request: {}", objectMapper.writeValueAsString(req));
+
+      Booking booking = bookingService.book(
+              concertId,
+              req.getUserId(),
+              req.getQuantity());
+
+      BookingResponse response = BookingResponse.from(booking);
+
+      log.info("Response: {}", objectMapper.writeValueAsString(response));
+
+      return response;
   }
 }
 

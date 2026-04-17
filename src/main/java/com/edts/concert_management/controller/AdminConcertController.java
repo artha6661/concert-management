@@ -16,6 +16,8 @@ import com.edts.concert_management.dto.ConcertResponse;
 import com.edts.concert_management.dto.CreateConcertRequest;
 import com.edts.concert_management.model.Concert;
 import com.edts.concert_management.service.ConcertService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/api/admin/concerts")
@@ -23,6 +25,7 @@ import com.edts.concert_management.service.ConcertService;
 @Slf4j
 public class AdminConcertController {
   private final ConcertService concertService;
+  private final ObjectMapper objectMapper = new ObjectMapper();
 
   public AdminConcertController(ConcertService concertService) {
     this.concertService = concertService;
@@ -31,7 +34,7 @@ public class AdminConcertController {
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   @Operation(summary = "Create a concert (admin helper)")
-  public ConcertResponse create(@Valid @RequestBody CreateConcertRequest req) {
+  public ConcertResponse create(@Valid @RequestBody CreateConcertRequest req) throws JsonProcessingException {
     log.info("Creating concert with name: {}, venue: {}, startsAt: {}, bookingOpensAt: {}, bookingClosesAt: {}, totalTickets: {}",
         req.getName(), req.getVenue(), req.getStartsAt(), req.getBookingOpensAt(), req.getBookingClosesAt(), req.getTotalTickets());
     Concert c =
@@ -42,6 +45,8 @@ public class AdminConcertController {
             req.getBookingOpensAt(),
             req.getBookingClosesAt(),
             req.getTotalTickets());
-    return ConcertResponse.from(c);
+    ConcertResponse conResponse = ConcertResponse.from(c);
+    log.info("Response: {}", objectMapper.writeValueAsString(conResponse));
+    return conResponse;
   }
 }
