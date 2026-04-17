@@ -44,5 +44,16 @@ public class Booking {
   @Column(name = "created_at", nullable = false)
   private Instant createdAt;
 
+   public Booking(Concert concert, String userId, int quantity, BookingStatus status, Instant createdAt) {
+    this.concert = concert;
+    this.userId = userId;
+    this.quantity = quantity;
+    this.status = status;
+    this.createdAt = createdAt;
+  }
+
+  public Long getConcertId() {
+    return concert.getId();
+  }
  
 }
