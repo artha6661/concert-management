@@ -26,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BookingController {
   private final BookingService bookingService;
-  private final ObjectMapper objectMapper = new ObjectMapper();
+  //private final ObjectMapper objectMapper = new ObjectMapper();
 
   public BookingController(BookingService bookingService) {
     this.bookingService = bookingService;
@@ -39,7 +39,7 @@ public class BookingController {
           @PathVariable("concertId") Long concertId,
           @Valid @RequestBody CreateBookingRequest req) throws JsonProcessingException {
 
-      log.info("Request: {}", objectMapper.writeValueAsString(req));
+      //log.info("Request: {}", objectMapper.writeValueAsString(req));
 
       Booking booking = bookingService.book(
               concertId,
@@ -48,7 +48,7 @@ public class BookingController {
 
       BookingResponse response = BookingResponse.from(booking);
 
-      log.info("Response: {}", objectMapper.writeValueAsString(response));
+      //log.info("Response: {}", objectMapper.writeValueAsString(response));
 
       return response;
   }

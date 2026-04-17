@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Slf4j
 public class AdminConcertController {
   private final ConcertService concertService;
-  private final ObjectMapper objectMapper = new ObjectMapper();
+  //private final ObjectMapper objectMapper = new ObjectMapper();
 
   public AdminConcertController(ConcertService concertService) {
     this.concertService = concertService;
@@ -46,7 +46,7 @@ public class AdminConcertController {
             req.getBookingClosesAt(),
             req.getTotalTickets());
     ConcertResponse conResponse = ConcertResponse.from(c);
-    log.info("Response: {}", objectMapper.writeValueAsString(conResponse));
+    //log.info("Response: {}", objectMapper.writeValueAsString(conResponse));
     return conResponse;
   }
 }
